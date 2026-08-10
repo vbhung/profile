@@ -10,28 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
       #loader-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.55;
-        z-index: 0;
-        -webkit-mask-image: radial-gradient(
-          circle at 50% 45%,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0.6) 45%,
-          rgba(0, 0, 0, 0) 85%
-        );
-        mask-image: radial-gradient(
-          circle at 50% 45%,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0.6) 45%,
-          rgba(0, 0, 0, 0) 85%
-        );
+        display: none;
       }
       #loader-content {
         position: relative;
@@ -41,89 +26,112 @@
         align-items: center;
       }
       #loader-vlogo {
-        width: 64px;
-        height: auto;
-        margin-bottom: 18px;
-        filter: drop-shadow(0 0 14px rgba(255, 40, 40, 0.75));
+        display: none;
       }
       .logo {
         font-size: 42px;
         letter-spacing: 6px;
         margin-bottom: 34px;
         font-family: "Orbitron", sans-serif;
-        color: #ffffff;
+        color: #f3efe8;
         font-weight: 600;
-        text-shadow:
-          0 0 20px rgba(255, 60, 60, 0.55),
-          0 0 45px rgba(255, 40, 40, 0.35);
       }
       .progress-bar {
-        width: 340px;
-        height: 4px;
-        background: #1a1a1a;
-        border-radius: 999px;
-        margin-bottom: 14px;
+        width: 320px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 0;
+        margin-bottom: 16px;
         overflow: hidden;
-        box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.6);
       }
       #bar {
         height: 100%;
         width: 0%;
-        border-radius: 999px;
-        background: linear-gradient(
-          90deg,
-          rgba(255, 30, 30, 0.2) 0%,
-          #ff2f2f 60%,
-          #ff6a6a 100%
-        );
-        box-shadow:
-          0 0 10px rgba(255, 40, 40, 0.85),
-          0 0 22px rgba(255, 40, 40, 0.55);
+        border-radius: 0;
+        background: #c9a86d;
         transition: width 0.2s;
       }
       .loader-info {
-        width: 340px;
+        width: 320px;
         display: flex;
         justify-content: space-between;
-        font-size: 13px;
-        letter-spacing: 1px;
-        color: #ff5555;
-        font-family: "Orbitron", sans-serif;
-        text-shadow: 0 0 10px rgba(255, 40, 40, 0.5);
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: rgba(233, 226, 212, 0.55);
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
       }
       #loader {
-        background: radial-gradient(
-          circle at 50% 40%,
-          #1a0808 0%,
-          #05000a 60%,
-          #000000 100%
-        );
+        background: #0a0a0a;
       }
     
 #soundPrompt{
-background:rgba(0,0,0,.72)!important;
-backdrop-filter:blur(10px);
+background:rgba(5,5,6,.78)!important;
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
 }
 #soundPromptBox{
-width:min(900px,90vw);
-padding:38px 42px;
-border:1px solid rgba(255,80,80,.25);
-border-radius:18px;
-background:rgba(10,10,10,.35);
-box-shadow:0 0 40px rgba(255,0,0,.12);
+width:min(820px,94vw);
+padding:80px 64px 60px;
+border:1px solid rgba(255,255,255,.14);
+border-radius:2px;
+background:linear-gradient(180deg, rgba(20,19,18,.55), rgba(10,10,10,.55));
+box-shadow:
+  0 30px 80px rgba(0,0,0,.55),
+  inset 0 1px 0 rgba(255,255,255,.06);
+position:relative;
 }
-.prompt-title{font-size:clamp(48px,7vw,80px);letter-spacing:16px;font-family:'Orbitron',sans-serif;white-space:nowrap}
+#soundPromptBox::before{
+content:"";
+position:absolute;
+inset:16px;
+border:1px solid rgba(201,168,109,.25);
+pointer-events:none;
+}
+.prompt-title{
+font-size:clamp(52px,8.5vw,84px);
+letter-spacing:2px;
+font-family:'Be Vietnam Pro', sans-serif;
+font-weight:700;
+white-space:nowrap;
+color:#f3efe8;
+text-transform:uppercase;
+}
 .prompt-sub{font-size:15px;letter-spacing:2px;color:#aaa}
-.ai-status{margin:24px auto;width:70%;border-top:1px solid rgba(255,255,255,.15);padding-top:18px;color:#ff6666;font-family:VT323;font-size:24px}
-.prompt-btn{
-margin:28px auto 0!important;
-width:auto!important;
-padding:12px 34px!important;
-background:transparent!important;
-border:1px solid rgba(255,80,80,.6)!important;
-box-shadow:0 0 18px rgba(255,0,0,.18);
+.ai-status{
+margin:26px auto 0;
+width:80%;
+border-top:1px solid rgba(201,168,109,.22);
+padding-top:20px;
+color:#c9a86d;
+font-family:'Jost', sans-serif;
+font-size:12px;
+font-weight:400;
+letter-spacing:3px;
+text-transform:uppercase;
 }
-.prompt-btn:hover{background:rgba(255,0,0,.08)!important}
+.prompt-btn{
+margin:34px auto 0!important;
+width:auto!important;
+padding:13px 46px!important;
+background:transparent!important;
+border:1px solid rgba(201,168,109,.55)!important;
+box-shadow:none;
+font-family:'Jost', sans-serif!important;
+font-size:11px!important;
+font-weight:400!important;
+letter-spacing:3px!important;
+color:#e8e2d4!important;
+text-transform:uppercase;
+border-radius:1px;
+transition:all .35s ease!important;
+}
+.prompt-btn:hover{
+background:rgba(201,168,109,.1)!important;
+border-color:rgba(201,168,109,.9)!important;
+letter-spacing:4px!important;
+}
 </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -443,36 +451,6 @@ box-shadow:0 0 18px rgba(255,0,0,.18);
         display: block;
         margin-bottom: 18px;
       }
-      .prompt-title {
-        font-family: "VT323", monospace;
-        font-size: 60px;
-        letter-spacing: 14px;
-        color: #fff;
-        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.9);
-        margin-bottom: 22px;
-      }
-      .prompt-sub {
-        font-size: 11px;
-        color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 20px;
-      }
-      .prompt-btn {
-        font-family: "VT323", monospace;
-        font-size: 18px;
-        padding: 8px 30px;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1.5px solid rgba(255, 255, 255, 0.35);
-        border-radius: 8px;
-        color: #fff;
-        cursor: pointer;
-        transition: background 0.2s;
-        display: block;
-        width: 100%;
-        margin-bottom: 8px;
-      }
-      .prompt-btn:hover {
-        background: rgba(255, 255, 255, 0.25);
-      }
       .prompt-btn-skip {
         font-size: 10px;
         color: rgba(255, 255, 255, 0.4);
@@ -493,9 +471,7 @@ box-shadow:0 0 18px rgba(255,0,0,.18);
   </head>
   <body class="flex items-center justify-center min-h-screen p-4">
     <div id="loader">
-      <img id="loader-bg" src="https://i.postimg.cc/6QVDgzSs/loader-bg.png" alt="valorant-bg" />
       <div id="loader-content">
-        <img id="loader-vlogo" src="https://i.postimg.cc/MpBNQqcd/Valorant-logo-pink-color-version-svg.webp" alt="valorant-logo" />
         <div class="logo">BẢO HƯNG</div>
         <div class="progress-bar">
           <div id="bar"></div>
@@ -514,9 +490,9 @@ box-shadow:0 0 18px rgba(255,0,0,.18);
     <!-- Popup -->
     <div id="soundPrompt">
       <div id="soundPromptBox">
-        <div class="prompt-title">BẢO HƯNG</div>
-        <div class="ai-status">STATUS : ONLINE ●<br><span style="font-size:16px;color:#bdbdbd">Welcome to my world.</span></div>
-        <button class="prompt-btn" id="btnYesSound">PRESS ENTER TO CONTINUE</button>
+        <div class="prompt-title">...</div>
+        <div class="ai-status">Status · Online<br><span style="font-family:'Jost',sans-serif;font-weight:300;font-size:15px;letter-spacing:1.5px;color:#bdb9ae;text-transform:none;display:inline-block;margin-top:10px;font-style:italic">Welcome to my world.</span></div>
+        <button class="prompt-btn" id="btnYesSound">Enter</button>
       </div>
     </div>
     <div class="os-window p-6" style="width: 100%; max-width: 600px">
